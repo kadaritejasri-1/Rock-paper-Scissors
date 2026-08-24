@@ -1,37 +1,62 @@
-let playerscore = 0;
-let computerscore = 0;
-
+let playerScore = 0;
+let computerScore = 0;
 
 function playGame(playerChoice) {
-    let choices = ['rock', 'paper', 'scissors'];
-    let computerChoice = choices[Math.floor(Math.random() * 3)];
-    document.getElementById("playerChoice").innerText = "You choice: " + playerChoice;
-    document.getElementById("computerChoice").innerText = "Computer choice: " + computerChoice;
+
+    let choices = ["rock", "paper", "scissors"];
+
+    let computerChoice =
+        choices[Math.floor(Math.random() * 3)];
+
+    document.getElementById("playerChoice").innerText =
+        "You chose: " + playerChoice;
+
+    document.getElementById("computerChoice").innerText =
+        "Computer chose: " + computerChoice;
+
     if (playerChoice === computerChoice) {
-        document.getElementById("result").innerText = "Draw!";
+
+        document.getElementById("result").innerText =
+            "Draw!";
+
     }
+
     else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
     ) {
-        playerscore++;
-        document.getElementById("result").innerText = "You Win!";
-    }
-    else {
-        computerscore++;
-        document.getElementById("result").innerText = "Computer Wins!";
+
+        playerScore++;
+
+        document.getElementById("result").innerText =
+            "You Win! 🎉";
+
     }
 
-    document.getElementById("score").innerText = `You: ${playerscore} | Computer: ${computerscore}`;
+    else {
+
+        computerScore++;
+
+        document.getElementById("result").innerText =
+            "Computer Wins!";
+
+    }
+
+    document.getElementById("score").innerText =
+        `You: ${playerScore} | Computer: ${computerScore}`;
 }
+
+
 function resetGame() {
-    playerscore = 0;
-    computerscore = 0;
+
+    playerScore = 0;
+    computerScore = 0;
 
     document.getElementById("playerChoice").innerText = "";
     document.getElementById("computerChoice").innerText = "";
     document.getElementById("result").innerText = "";
-    document.getElementById("score").innerText = "You: 0 | Computer: 0";
+
+    document.getElementById("score").innerText =
+        "You: 0 | Computer: 0";
 }

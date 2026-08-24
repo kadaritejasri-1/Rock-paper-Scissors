@@ -1,38 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("game-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
+    overflow: hidden;
 }
 
-h1 {
-    margin-bottom: 30px;
+.game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
-button {
-    padding: 12px 20px;
-    margin: 8px;
-    font-size: 18px;
-    cursor: pointer;
+
+/* =========================
+   TITLE
+========================= */
+
+.game::before {
+    content: "ROCK PAPER SCISSORS";
+
+    position: absolute;
+
+    top: 6%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: 55px;
+    font-weight: bold;
+
+    text-shadow: 4px 4px 5px black;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CHOICE CARDS
+========================= */
+
+.choice-btn {
+    position: absolute;
+
+    width: 220px;
+    height: 205px;
+
+    padding: 0;
+
+    background: transparent;
     border: none;
-    border-radius: 8px;
+
+    cursor: pointer;
 }
 
-button:hover {
+.choice-btn img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.2s;
+}
+
+.choice-btn:hover img {
     transform: scale(1.05);
 }
 
-#playerChoice,
-#computerChoice {
-    font-size: 18px;
+
+/* Rock */
+
+.rock {
+    left: 20%;
+    top: 27%;
 }
 
-#result {
-    font-size: 24px;
-    font-weight: bold;
+
+/* Paper */
+
+.paper {
+    left: 40%;
+    top: 27%;
 }
 
-#score {
+
+/* Scissors */
+
+.scissors {
+    left: 60%;
+    top: 27%;
+}
+
+
+/* =========================
+   PLAYER CHOICE
+========================= */
+
+#playerChoice {
+    position: absolute;
+
+    left: 50%;
+    top: 53%;
+
+    transform: translateX(-50%);
+
+    width: 400px;
+
+    margin: 0;
+
+    color: white;
+
     font-size: 20px;
     font-weight: bold;
-    margin: 20px;
+
+    text-align: center;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* =========================
+   COMPUTER CHOICE
+========================= */
+
+#computerChoice {
+    position: absolute;
+
+    left: 50%;
+    top: 63%;
+
+    transform: translateX(-50%);
+
+    width: 400px;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#result {
+    position: absolute;
+
+    left: 50%;
+    top: 73%;
+
+    transform: translateX(-50%);
+
+    width: 400px;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    text-align: center;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+#score {
+    position: absolute;
+
+    left: 50%;
+    top: 82%;
+
+    transform: translateX(-50%);
+
+    width: 500px;
+
+    margin: 0;
+    padding: 14px;
+
+    background: rgba(0, 35, 70, 0.9);
+
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    text-align: center;
+
+    border: 2px solid #0875a8;
+}
+
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.reset-btn {
+    position: absolute;
+
+    left: 50%;
+    top: 91%;
+
+    transform: translateX(-50%);
+
+    width: 220px;
+    height: 55px;
+
+    background: white;
+
+    color: #168bd2;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.reset-btn:hover {
+    transform: translateX(-50%) scale(1.05);
 }
